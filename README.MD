@@ -53,11 +53,11 @@ menggunakan bulkInsert: http://docs.sequelizejs.com/class/lib/query-interface.js
     [{
       subject_name: 'Kimia',
       createdAt: new Date(),
-      updatedAt: new Data()
+      updatedAt: new Date()
     },{
       subject_name: 'Matimatika',
       createdAt: new Date(),
-      updatedAt: new Data()
+      updatedAt: new Date()
     }])
     .then(()=>{
       queryInterface.bulkInsert('Teachers',
@@ -65,12 +65,12 @@ menggunakan bulkInsert: http://docs.sequelizejs.com/class/lib/query-interface.js
         first_name: "Bambang",
         last_name: "Suprapto",
         createdAt: new Date(),
-        updatedAt: new Data()
+        updatedAt: new Date()
       },{
         first_name: "Sudjarwo",
         last_name: "Wonokrio",
         createdAt: new Date(),
-        updatedAt: new Data()
+        updatedAt: new Date()
       }])
       .then(()=>{
         
@@ -82,7 +82,8 @@ menggunakan bulkInsert: http://docs.sequelizejs.com/class/lib/query-interface.js
 sequelize db:seed --seed <nama_file_seed>
 sequelize db:seed --seed 20171106042744-add-dummy-data
 ```
-10. menambahkan coloumn foreign key
+10. menambahkan coloumn foreign key  
+
 10.1 buat migration
 ```
 sequelize migration:create --name add-coloumn-SubjectId-to-Teacher
@@ -127,7 +128,7 @@ pada models/teacher.js
 ```
 sequelize seed:create --name update-dummy-data
 ```
-11.3 update file seednya menambahkan sumbect id pada Bpk Bambang untuk pelajaran Kimia
+11.3 update file seednya menambahkan sumbject id pada Bpk Bambang untuk pelajaran Kimia
 ```
 const models = require('../models');
 ...
@@ -136,7 +137,7 @@ const models = require('../models');
     }
     return models.Teacher.update(updated,{where: {id: 1 }})
 ```
-12. update di root untuk menampilkan data Teacher dan Subject yang dia ajar
+12. update di root untuk menampilkan data Teacher dan Subject yang dia ajar  
 12.1 Update /teacher
 ```
 app.get('/teacher', (req,res)=>{
